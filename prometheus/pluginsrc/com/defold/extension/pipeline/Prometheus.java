@@ -142,7 +142,7 @@ public class Prometheus implements ILuaObfuscator {
 
 	@Override
 	public String obfuscate(String input, String path, String buildVariant) throws Exception {
-		if (disabled) {
+		if (disabled || !"release".equals(buildVariant)) {
 			return input;
 		}
 
